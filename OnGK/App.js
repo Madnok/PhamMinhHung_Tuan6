@@ -9,7 +9,6 @@ export default function App() {
   const [data, setData] = useState([]);
   
   return (
-    
     <View style={styles.container}>
       <View>
           <FlatList
