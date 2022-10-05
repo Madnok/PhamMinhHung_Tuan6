@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View ,React, Button, SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
 
-export default function FlatList() {
+export default function FlatListTodo() {
   return (
     <View style={styles.container}>
     
