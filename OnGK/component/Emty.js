@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
 import { StyleSheet, Text, TextInput, View ,React, Button, SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
 
-export default function FlatListTodo({item}) {
+export default function Emty() {
   return (
-    <View style={styles.container}>{item}</View>
+    <View style={styles.container}>
+    
+    </View>
     
   );
 }
