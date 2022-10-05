@@ -5,7 +5,6 @@ import { StyleSheet, Text, TextInput, View ,React, Button, SafeAreaView, FlatLis
 export default function FlatListTodo({item}) {
   return (
     <View style={styles.container}>{item}</View>
-    
   );
 }
 const styles = StyleSheet.create({
