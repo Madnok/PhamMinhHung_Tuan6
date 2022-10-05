@@ -1,25 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View ,React, Button, SafeAreaView, TouchableOpacity, FlatList} from 'react-native';
-import AddInput from './component/AddInput';
+import { StyleSheet, Text, TextInput, View , Button, SafeAreaView, TouchableOpacity, FlatList} from 'react-native';
+
 import FlatListTodo from './component/FlatListTodo';
-import Emty from './component/Emty';
+import Blank from './component/Blank';
 import { useState } from 'react';
+import InputSubmit from './component/InputSubmit';
 
 export default function App() {
   const [data, setData] = useState([]);
+
+  const submitHandlerButton = (value) => {
+    setData((prevTodo) => {
+      return [
+        {
+          value: value,
+          key: Math.random().toString(),
+        },
+        ...prevTodo,
+      ];
+    });
+  };
   
   return (
     <View style={styles.container}>
+      <InputSubmit submitInput={submitHandlerButton}></InputSubmit>
       <View>
           <FlatList
             data={data}
-           renderItem={({ item }) => (
-              console.log(item)
+            keyExtractor={(item) => item.key }
+            renderItem={({item}) => (
+              <FlatListTodo item={item}></FlatListTodo>
             )}
-          />
-        </View>
-        <AddInput></AddInput>
-        <FlatListTodo></FlatListTodo>
+            />
+      </View>
     </View>
     
   );

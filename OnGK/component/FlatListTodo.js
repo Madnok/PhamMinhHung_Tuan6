@@ -1,11 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, TextInput, View ,React, Button, SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TextInput, View , Button, SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
 
 export default function FlatListTodo({item}) {
   return (
-    <View style={styles.container}>{item.value}</View>
-  );
+      <View>
+          <TouchableOpacity>
+          <View>
+            
+              <Text style={styles.container}>{item.value}</Text>
+              
+          </View>
+        </TouchableOpacity>
+      </View> 
+      );
 }
 const styles = StyleSheet.create({
   container: {
